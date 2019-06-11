@@ -74,8 +74,8 @@
 
   // Your custom JavaScript goes here
   // Bacon cloner
-  var baconImage = document.querySelector('.bacon-image');
-  var baconCloner = document.querySelector('.bacon-cloner');
+  var baconImage = document.querySelector('.o-bacon-cloner__image');
+  var baconCloner = document.querySelector('.o-bacon-cloner__btn');
 
   baconCloner.addEventListener('click', function() {
     baconImage.parentNode.appendChild(baconImage.cloneNode(true));

@@ -66,12 +66,14 @@
         </div>
       </header>
       <main class="mdl-layout__content">
-        <div class="mdl-layout__tab-panel is-active" id="overview">
-          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <button action="button" class="bacon-cloner">Yeah, I want more bacon!</button>
+        <div class="mdl-layout__tab-panel is-active o-bacon-cloner" id="overview">
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp o-bacon-cloner__btn-container">
+            <button class="mdl-button mdl-js-button mdl-button--fab o-bacon-cloner__btn">
+              <i class="material-icons">add</i>
+            </button>
           </section>
-          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <img class="bacon-image" src="http://media.washtimes.com.s3.amazonaws.com/media/image/2015/02/23/bacon.jpg" alt="Bacon" style="width: 100%; height: 100%;">
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp o-bacon-cloner__image-container">
+            <img class="o-bacon-cloner__image" src="http://media.washtimes.com.s3.amazonaws.com/media/image/2015/02/23/bacon.jpg" alt="Bacon">
           </section>
         </div>
         <footer class="mdl-mega-footer">
