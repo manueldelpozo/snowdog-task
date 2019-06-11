@@ -211,3 +211,16 @@ html, body {
 .mdl-demo .mdl-menu__container {
   z-index: 99;
 }
+
+.mdl-demo main .o-bacon-cloner {
+  padding-bottom: 50px;
+}
+
+.mdl-demo .mdl-layout__content .o-bacon-cloner .o-bacon-cloner__btn-container {
+  margin-bottom: 80px;
+}
+
+.o-bacon-cloner .o-bacon-cloner__image {
+  width: 50%;
+  height: 50%;
+}
