@@ -73,4 +73,11 @@
   }
 
   // Your custom JavaScript goes here
+  // Bacon cloner
+  var baconImage = document.querySelector('.bacon-image');
+  var baconCloner = document.querySelector('.bacon-cloner');
+
+  baconCloner.addEventListener('click', function() {
+    baconImage.parentNode.appendChild(baconImage.cloneNode(true));
+  });
 })();
