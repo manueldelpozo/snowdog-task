@@ -3,6 +3,8 @@ $_color-gray-light-2: #dddddd;
 $_color-gray-light-3: #aaaaaa;
 $_color-button: #6bd400; 
 $_color-black: #000000;
+$_color-success: #6bd400; 
+$_color-error: rgb(211, 0, 0);
 
 
 .l-checkout {
@@ -70,6 +72,10 @@ $_color-black: #000000;
 
                 &:focus + .o-form-field__label {
                     font-weight: 700;
+                }
+
+                &.error + .o-form-field__label {
+                    color: $_color-error;
                 }
             }
 
@@ -140,6 +146,14 @@ $_color-black: #000000;
             font-size: 11px;
             font-weight: 600;
             min-height: 25px;
+        }
+    }
+
+    &__validation-msg {
+        background-color: $_color-success;
+
+        &.error {
+            background-color: $_color-error;
         }
     }
 }

@@ -233,7 +233,7 @@
         <div class="mdl-layout__tab-panel l-checkout" id="checkout">
           <section class="section--center mdl-grid mdl-grid--no-spacing">
             <div class="mdl-cell mdl-cell--8-col">
-              <form action="#" class="l-checkout__form"> 
+              <form action="#" id="checkoutForm" class="l-checkout__form"> 
                 <div class="l-chechout__form-title">
                   <span class="l-chechout__form-title-index">1</span>
                   Personal Information
@@ -243,7 +243,7 @@
                   <div class="mdl-cell mdl-cell--6-col">
                     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label o-form-field">
-                          <input class="mdl-textfield__input" type="text"id="firstName" placeholder="Elon">
+                          <input class="mdl-textfield__input" type="text" id="firstName" name="firstName" placeholder="Elon">
                           <label class="mdl-textfield__label o-form-field__label" for="firstName">First name</label>
                         </div>
                     </div>
@@ -252,7 +252,7 @@
                   <div class="mdl-cell mdl-cell--6-col">
                     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label o-form-field">
-                          <input class="mdl-textfield__input" type="text"  id="lastName" placeholder="Musk">
+                          <input class="mdl-textfield__input" type="text" id="lastName" name="lastName" placeholder="Musk">
                           <label class="mdl-textfield__label o-form-field__label" for="lastName">Last name</label>
                         </div>
                     </div>
@@ -261,7 +261,7 @@
                   <div class="mdl-cell mdl-cell--12-col">
                     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label o-form-field">
-                          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="email" placeholder="elon@spacex.com">
+                          <input class="mdl-textfield__input" type="text" id="email" name="email" placeholder="elon@spacex.com">
                           <label class="mdl-textfield__label o-form-field__label" for="email">Email</label>
                         </div>
                       </div>
@@ -270,7 +270,7 @@
                   <div class="mdl-cell mdl-cell--6-col">
                     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label o-form-field">
-                          <select class="mdl-textfield__input" type="text" id="country">
+                          <select class="mdl-textfield__input" type="text" id="country" name="country">
                             <option>United States</option>
                           </select>
                           <label class="mdl-textfield__label o-form-field__label" for="country">Country</label>
@@ -281,7 +281,7 @@
                   <div class="mdl-cell mdl-cell--6-col">
                     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label o-form-field">
-                          <input class="mdl-textfield__input" type="text" id="postalCode" placeholder="10001">
+                          <input class="mdl-textfield__input" type="text" id="postalCode" name="postalCode" placeholder="10001">
                           <label class="mdl-textfield__label o-form-field__label" for="postalCode">Postal Code</label>
                         </div>
                     </div>
@@ -290,8 +290,8 @@
                   <div class="mdl-cell mdl-cell--12-col">
                     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label o-form-field">
-                          <input class="mdl-textfield__input" type="text" id="postalCode" placeholder="(212) 692-93-92">
-                          <label class="mdl-textfield__label o-form-field__label" for="postalCode">Phone Number</label>
+                          <input class="mdl-textfield__input" type="text" id="phoneNumber" name="phoneNumber" placeholder="(212) 692-93-92">
+                          <label class="mdl-textfield__label o-form-field__label" for="phoneNumber">Phone Number</label>
                         </div>
                     </div>
                   </div>
@@ -311,7 +311,7 @@
                   <div class="mdl-cell mdl-cell--12-col">
                     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label o-form-field">
-                          <input class="mdl-textfield__input" type="text"id="creditCard" placeholder="000-000-000-000">
+                          <input class="mdl-textfield__input" type="text" id="creditCard" name="creditCard" placeholder="000-000-000-000">
                           <label class="mdl-textfield__label o-form-field__label" for="creditCard">Credit Card Number</label>
                         </div>
                     </div>
@@ -320,7 +320,7 @@
                   <div class="mdl-cell mdl-cell--6-col">
                     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label o-form-field">
-                          <input class="mdl-textfield__input" type="password"  id="securityCode" placeholder="***">
+                          <input class="mdl-textfield__input" type="password" id="securityCode" name="securityCode" placeholder="***">
                           <label class="mdl-textfield__label o-form-field__label" for="securityCode">Security code</label>
                           <i class="material-icons o-form-field__icon">help_outline</i>
                         </div>
@@ -330,7 +330,7 @@
                   <div class="mdl-cell mdl-cell--6-col">
                     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label o-form-field">
-                          <input class="mdl-textfield__input" type="text" id="expirationDate" placeholder="MM / YY">
+                          <input class="mdl-textfield__input" type="text" id="expirationDate" name="expirationDate" placeholder="MM/YY">
                           <label class="mdl-textfield__label o-form-field__label" for="expirationDate">Expiration date</label>
                         </div>
                       </div>
@@ -408,6 +408,11 @@
                   </div>
                 </div>
             </div>
+
+            <div id="validationMessage" class="mdl-js-snackbar mdl-snackbar l-checkout__validation-msg">
+              <div class="mdl-snackbar__text"></div>
+              <button class="mdl-snackbar__action" type="button"></button>
+            </div>
           </section>
         </div>
         <footer class="mdl-mega-footer">
@@ -473,7 +478,7 @@
       </main>
     </div>
 
-    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <!-- build:js scripts/main.min.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
