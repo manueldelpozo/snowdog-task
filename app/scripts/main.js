@@ -77,7 +77,69 @@
   var baconImage = document.querySelector('.o-bacon-cloner__image');
   var baconCloner = document.querySelector('.o-bacon-cloner__btn');
 
-  baconCloner.addEventListener('click', function() {
-    baconImage.parentNode.appendChild(baconImage.cloneNode(true));
+  if (baconCloner) {
+    baconCloner.addEventListener('click', function() {
+      baconImage.parentNode.appendChild(baconImage.cloneNode(true));
+    });
+  }
+
+  // Form validation
+  var form = document.querySelector('.l-checkout__form');
+  var validationMessage = document.querySelector('#validationMessage');
+  var sucessMessage = 'Everything is OK!';
+  var testedFields = {
+    'expirationDate': /^((0[1-9])|(1[0-2]))[\/\.\-]*((0[8-9])|(1[1-9]))$/,
+    'securityCode': /^[0-9]{3}$/,
+    'creditCard': /^[0-9]{3}\-?[0-9]{3}\-?[0-9]{3}\-?[0-9]{3}$/,
+    'email': /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+    'lastName': /^[a-z ,.'-]+$/i,
+    'firstName': /^[a-z ,.'-]+$/i,
+  };
+  var testedFieldsKeys = [];
+  for (var key in testedFields) {      
+      if (testedFields.hasOwnProperty(key)) {
+        testedFieldsKeys.push(key);
+      }
+  }
+
+  function capitalizeName(camelCaseName) {
+    var spaced = camelCaseName.replace(/([A-Z])/g, ' $1');
+    return spaced.charAt(0).toUpperCase() + spaced.slice(1);
+  }
+
+  function setError(field, validationMessage) {
+    validationMessage.classList.add('error');
+    field.classList.add('error');
+    field.focus();
+  }
+
+  function validateFields() {
+    var data = {
+      message: sucessMessage
+    };
+    var fields = document.forms.checkoutForm;
+    
+    validationMessage.classList.remove('error');
+    for (var i = 0; i < testedFieldsKeys.length; i++) {
+      var element = fields[testedFieldsKeys[i]];
+      var regExp = testedFields[testedFieldsKeys[i]];
+
+      if (element.value.length === 0) {
+        data.message = capitalizeName(element.id) + ' is empty!';
+        setError(element, validationMessage);
+      } else if (regExp && !regExp.test(element.value)) {
+        data.message = capitalizeName(element.id) + ' has wrong format! Hint: ' + element.placeholder;
+        setError(element, validationMessage);
+      } else {
+        element.classList.remove('error');
+      }
+    }
+
+    validationMessage.MaterialSnackbar.showSnackbar(data);
+  }
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    validateFields();
   });
 })();
