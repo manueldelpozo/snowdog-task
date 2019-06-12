@@ -1,0 +1,145 @@
+$_color-gray-light-1: #f2f2f2; 
+$_color-gray-light-2: #dddddd;
+$_color-gray-light-3: #aaaaaa;
+$_color-button: #6bd400; 
+$_color-black: #000000;
+
+
+.l-checkout {
+    &.mdl-layout__tab-panel:not(#overview) {
+        background-color: $_color-gray-light-1;
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+
+    .mdl-card {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        min-height: auto;
+    }
+
+    &__form {
+        .l-chechout__form-title {
+            text-transform: uppercase;
+            font-weight: 800;
+            font-size: 12px;
+            margin-top: 40px;
+            color: $_color-black;
+            display: inline-flex;
+            align-items: center;
+
+            &-index {
+                background-color: $_color-black;
+                border-radius: 50%;
+                color: $_color-gray-light-1;
+                margin-right: 10px;
+                width: 18px;
+                height: 18px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .l-checkout__form-title-icon > .material-icons {
+                font-size: 14px;
+                margin-left: 10px;
+            }
+        }
+
+        &-btn.mdl-button--raised.mdl-button--colored {
+            width: 100%;
+            height: 50px;
+            background-color: $_color-button;
+            margin-top: 40px;
+            font-weight: 700;
+
+            .material-icons {
+                font-size: 14px;
+                margin-right: 5px;
+            }
+        }
+
+        .o-form-field {
+            padding-bottom: 5px;
+
+            input,
+            select {
+                border-bottom: none;
+                color: $_color-black;
+
+                &:focus + .o-form-field__label {
+                    font-weight: 700;
+                }
+            }
+
+            &__label.mdl-textfield__label {
+                color: $_color-black;
+                font-weight: 700;
+
+                &:after {
+                    display: none;
+                }
+            }
+
+            &__icon.material-icons {
+                position: absolute;
+                top: 15px;
+                right: 0;
+                font-size: 22px;
+                color: $_color-gray-light-3;
+            }
+        }
+    }
+
+    &__resume {
+        margin-top: 76px;
+        font-size: 11px;
+
+        &.mdl-card {
+            padding: 0;
+        }
+
+        &-title {
+            text-transform: uppercase;
+            font-weight: 900;
+            color: $_color-black;
+        }
+
+        &-container {
+            margin: 5px;
+            padding: 10px;
+            border: 1px dashed $_color-gray-light-2;
+        }
+
+        &-items,
+        &-taxes {
+            padding-bottom: 10px;
+            border-bottom: 1px dashed $_color-gray-light-2;
+        }
+
+        &-total {
+            margin-bottom: 10px;
+
+            .mdl-list {
+                width: 100%;
+
+                .mdl-list__item-primary-content {
+                    font-weight: 900;
+                }
+
+                .mdl-list__item-secondary-content {
+                    font-weight: 900;
+                    font-size: 1.8em;
+                }
+            }
+        }
+
+        .mdl-list__item {
+            padding: 0;
+            font-size: 11px;
+            font-weight: 600;
+            min-height: 25px;
+        }
+    }
+}
